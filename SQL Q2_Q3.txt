@@ -1,6 +1,6 @@
 Q2) select ID,Name
    From Customer
-   ORDER BY ID,Name Desc;
+   ORDER BY Name Desc,ID Asc;
    
 Q3)select ID,Name,Marks,
 CASE WHEN Marks > 90 Then 'A+'
