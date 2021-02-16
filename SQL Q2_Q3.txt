@@ -1,8 +1,7 @@
 Q2) select ID,Name
    From Customer
-   ORDER BY salary ID;
+   ORDER BY ID,Name Desc;
    
-
 Q3)select ID,Name,Marks,
 CASE WHEN Marks > 90 Then 'A+'
      WHEN Marks >= 70 AND < 90 then 'A'
