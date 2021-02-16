@@ -1,0 +1,56 @@
+#include <iostream>
+#include <malloc.h>
+#include <string.h>
+
+using namespace std;
+
+class Polyindrom {
+    public:
+            int strLength(char* strlength);             //Check for the String Length 
+            bool checkForPolyindrom(char* strlenth,int Length);    //Check for String is Polyindrom
+};
+
+
+int Polyindrom::strLength(char* strlength){
+    
+    char *p = strlength;  // start the Index from zero and count the length of the String 
+    while(*p!='\0')       // Iterate until to Find the Last Index of the String
+       p++;              
+    
+    return p-strlength;   // Subract the Last Pointer Address with Intial Pointer Address.           
+}
+
+bool Polyindrom::checkForPolyindrom(char* strName, int Length){
+    
+    const char *ptr1 = strName;
+    const char *ptr2 = strName + strLength( strName );
+	
+    // Check each Chararter from front and back and get check equal or not.	
+    if ( ptr1 != ptr2 )
+    {
+        while ( ptr1 < --ptr2 && tolower(*ptr1 ) == tolower(*ptr2 ) )  
+            ++ptr1;
+    }
+
+    return !( ptr1 < ptr2 ); 
+}
+
+int main()
+{
+    Polyindrom polyndrome;  //Create an Object Instance of a Class
+    
+    char* strName = new char(30); //Allocate the memory to string for accept name.
+    cout << "Enter the name:  ";
+    cin >> strName;
+    
+    //check for string is Polyndrome.
+    if( polyndrome.checkForPolyindrom(strName,polyndrome.strLength(strName)) == true)   
+        cout<<"It is a Polyindrom";
+    else
+        cout<<"It is Not a Polyindrom";
+    
+    //Delete it.
+    delete(strName);  
+        
+    return 0;
+}

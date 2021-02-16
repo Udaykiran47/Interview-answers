@@ -1,0 +1,15 @@
+Q2) select ID,Name
+   From Customer
+   ORDER BY salary ID;
+   
+
+Q3)select ID,Name,Marks,
+CASE WHEN Marks > 90 Then 'A+'
+     WHEN Marks >= 70 AND < 90 then 'A'
+     WHEN Marks >= 50 AND < 70 then 'B'
+     WHEN Marks >= 40 AND < 50 then  'C'
+     ELSE 'FAIL' END as GRADE
+from Students;
+
+
+
